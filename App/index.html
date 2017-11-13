@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-cloak>
+<head>
+	<title>Angular js</title>
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body ng-controller="indexCtrl">
+	<!-- Angular ngRoute -->
+<!-- 	<header>
+            <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Angular Routing Example</a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+                    <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+                </ul>
+            </div>
+            </nav>
+    </header> -->
+
+    <!-- AngularUI Router -->
+    <nav class="navbar navbar-inverse" role="navigation">
+	    <div class="navbar-header">
+	        <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	        <li><a ui-sref="home">Home</a></li>
+	        <li><a ui-sref="about">About</a></li>
+	    </ul>
+	</nav>
+
+<div id="container">
+ <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT -->
+   <!-- <div ng-view></div> -->
+
+   <div ui-view></div>
+
+</div>
+
+
+<script
+  src="https://code.jquery.com/jquery-2.0.0.min.js"
+  integrity="sha256-1IKHGl6UjLSIT6CXLqmKgavKBXtr0/jJlaGMEkh+dhw="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/angular.min.js"></script>
+<script type="text/javascript" src="assets/js/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="assets/js/angular-route.min.js"></script> -->
+
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script> -->
+
+
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="commonController.js"></script>
+<script>
+var locale = JSON.parse(localStorage.getItem('locale'));
+if (locale) {
+    document.write('<script src="scripts/i18n/angular-locale_'+locale+'.js"><\/script>');
+}
+</script>
+</body>
+</html>

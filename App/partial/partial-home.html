@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+    <h1>The Homey Page</h1>
+    <h3>{{myHeader}}</h3>
+	 <p>{{data.time}}</p>
+	 <button ng-click="updateTime()">update time - ng-click</button>
+	 <!-- <button id="updateTimeButton"  >update time</button> -->
+    <p>This page demonstrates <span class="text-danger">nested</span> views.</p>
+    <a ui-sref=".list" class="btn btn-primary">List</a>
+    <a ui-sref=".paragraph" class="btn btn-danger">Paragraph</a>    
+    <h2>AngularJS - Scope Events Propagation</h2>  
+	<div ng-controller="EventPropagationController">  
+	    Root scope "MyEvent"" count: {{count}}  
+	    <div ng-controller="EventPropagationController">  
+	        <button ng-click="$emit('MyEvent')">Emit - 'MyEvent'</button>  
+	        <button ng-click="$broadcast('MyEvent')">Broadcast('MyEvent')</button>  
+	        <br>  
+	        First level - scope "MyEvent" count: {{count}}  
+	        <div  ng-controller="EventPropagationController">  
+	            Last level - scope "MyEvent" count: {{count}}  
+	        </div>  
+	        a = <input type="text" ng-model="a">
+			b = <input type="text" ng-model="b"><br>
+			c = {{c}}<br>
+			<div ng-repeat="o in o">
+				<div>{{o.name}}</div>
+			</div>
+	    </div>  
+	</div>  
+	{{name}}
+	<div shared-directive></div>
+	<!-- <div message text="First">
+		<div message text="secound">
+			<div message text="Thired">
+
+			</div>
+		</div>
+	</div> -->
+	<div message text="{{ i }}" ng-repeat="i in [1,2,3,4,5]" > 
+		{{i}}
+	</div>
+</div>
+<div ui-view></div>
+</body>
+</html>
